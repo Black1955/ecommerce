@@ -1,6 +1,6 @@
-package main.java.com.ecommerce.core.usecase;
+package com.ecommerce.core.usecase;
 
-public interface UseCase<I extends InputData, O extends OutputData> {
+public interface UseCase<I extends UseCase.InputData, O extends UseCase.OutputData> {
     O execute(I input);
     public interface InputData {
 
