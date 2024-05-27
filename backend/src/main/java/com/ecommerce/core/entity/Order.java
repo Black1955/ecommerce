@@ -1,7 +1,6 @@
-package main.java.com.ecommerce.core.entity;
+package com.ecommerce.core.entity;
 import java.time.Instant;
 import java.util.List;
-
 
 public class Order {
     private final long id;
@@ -35,12 +34,13 @@ public class Order {
     }
     public void setItems(List<OrderItem> items) {
         this.items = items;
+        this.calculateTotal(items);
     }
     public float getTotal() {
         return this.total;
     }
     public float calculateTotal(List<OrderItem> items) {
-        return items.stream().mapToDouble(OrderItem::getPrice).sum();
+        return (float) items.stream().mapToDouble(OrderItem::getPrice).sum();
     }
     
 }

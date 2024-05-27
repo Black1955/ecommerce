@@ -1,20 +1,20 @@
-package main.java.com.ecommerce.core.entity;
+package com.ecommerce.core.entity;
 
+import java.util.UUID;
 
-class User {
-    private final long id;
+public class User {
+    private final UUID id;
     private String email;
     private String password;
     private String name;
     
    public User(String email, String password, String name) {
-        this.id = 1;
+        this.id = UUID.randomUUID();
         this.email = email;
         this.name = name;
         this.password = password;
     }
-
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
