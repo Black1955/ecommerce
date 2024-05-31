@@ -1,4 +1,4 @@
-package main.java.com.ecommerce.core.entity;
+package com.ecommerce.core.entity;
 
 
 

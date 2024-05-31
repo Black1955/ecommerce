@@ -1,4 +1,4 @@
-package main.java.com.ecommerce.core.entity;
+package com.ecommerce.core.entity;
 
 
 
@@ -10,12 +10,10 @@ public class Product {
 
     public Product( String name, String description, float price) {
         this.id = 123;
-        this.name = name;
-        this.description = description;
+         this.name = name;
+       this.description = description;
         this.price = price;
     }
-    
-
 
 
     // geters and setters 
