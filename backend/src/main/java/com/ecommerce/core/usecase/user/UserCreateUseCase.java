@@ -1,4 +1,5 @@
 package com.ecommerce.core.usecase.user;
+import com.ecommerce.core.entity.exception.UserAlreadyExistException;
 import com.ecommerce.core.usecase.UseCase;
 import com.ecommerce.core.entity.User;
 public class UserCreateUseCase implements UseCase<UserCreateUseCase.InputData, UserCreateUseCase.OutputData> {
@@ -9,7 +10,8 @@ public class UserCreateUseCase implements UseCase<UserCreateUseCase.InputData, U
     }
     @Override
     public OutputData execute(InputData input) {
-
+        if(userRepository.existUser(input.getEmail()))
+            throw new UserAlreadyExistException("email is already in use");
         User user = new User(input.getEmail(),input.getPassword(), input.getName());
         return new OutputData(userRepository.create(user));
     }
