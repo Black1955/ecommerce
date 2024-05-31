@@ -14,7 +14,7 @@ public class UserCreateUseCase implements UseCase<UserCreateUseCase.InputData, U
         return new OutputData(userRepository.create(user));
     }
 
-    public class InputData implements UseCase.InputData {
+    public static class InputData implements UseCase.InputData {
         private final String email;
         private final String name;
         private final String password;
@@ -34,7 +34,7 @@ public class UserCreateUseCase implements UseCase<UserCreateUseCase.InputData, U
             return this.password;
         }
     }
-    public class OutputData implements  UseCase.OutputData {
+    public static class OutputData implements  UseCase.OutputData {
         private final User user;
         public OutputData(User user) {
             this.user = user;
